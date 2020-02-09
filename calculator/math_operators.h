@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef MATH_OPERATORS_H
+#define MATH_OPERATORS_H
 
 float sum(float a,int b);
 float multiply(float a,int b);

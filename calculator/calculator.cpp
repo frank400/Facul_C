@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+
 //utilities
 #include "utils.h"
 
@@ -55,8 +56,7 @@ int main(){
 
     return 0;
 }
-//util
-//get numbers input
+
 float get_num(){
     float i;
     std::cout<<"enter a number:";
@@ -75,7 +75,6 @@ int get_option(){
     std::cin>>op;
     return op;
 }
-
 
 //math operators
 float sum(float a,int b){
