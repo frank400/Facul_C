@@ -5,5 +5,6 @@ int main(){
     Cat tom;
     std::cout<<tom.speak();
     tom.jump();
+    tom.jump();
     return 0;
 }
