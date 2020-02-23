@@ -20,11 +20,13 @@ void insert_end(Node** head_ref, int n){
         *head_ref=new_node;
         return;
     }
-    while(last->next!=NULL){
+    if(last->next!=NULL){
         last=last->next;
+        insert_end(&last,n);
     }
-
-    last->next=new_node;
+    else{
+        last->next=new_node;
+    }
 }
 
 void insert_front(Node** head_ref,int n){
