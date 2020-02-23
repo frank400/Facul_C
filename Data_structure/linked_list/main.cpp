@@ -26,7 +26,7 @@ int main(){
 
     
     //insert an element in the end of the list
-    insert_end(&first,3);
+    append(&first,3);
     show_linked_list(first);
     
 
