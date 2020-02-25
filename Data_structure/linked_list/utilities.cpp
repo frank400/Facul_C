@@ -95,3 +95,11 @@ void delete_position(Node** head_ref,int position){
     free(temp);
 
 }
+int get_length(Node* head){
+    int counter=1;
+    while(head->next!=NULL){
+        counter++;
+        head=head->next;
+    }
+    return counter;
+}

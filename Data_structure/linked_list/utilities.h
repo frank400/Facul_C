@@ -7,4 +7,5 @@ void push(Node** head_ref,int n);
 void insertAfter(Node* prev_node, int new_data);
 void delete_node(Node** head_ref,int key);
 void delete_position(Node** head_ref,int position);
+int get_length(Node* head);
 #endif
