@@ -76,3 +76,22 @@ void delete_node(Node** head_ref,int key){
     prev->next=temp->next;
     free(temp);
 }
+void delete_position(Node** head_ref,int position){
+    Node* temp=*head_ref,*prev;
+    int count=1;
+    if (temp != NULL && count==position){
+        *head_ref=temp->next;
+        free(temp);
+        return;
+    }
+    while(temp->next!=NULL && count<position){
+        prev=temp;
+        temp=temp->next;
+        count++;
+    }
+    if (temp==NULL){return;}
+    
+    prev->next=temp->next;
+    free(temp);
+
+}
