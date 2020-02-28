@@ -2,13 +2,13 @@
 #include "Node.h"
 using namespace std;
 
-void show_linked_list(Node* n){  
-    if (n->next !=NULL){
-        cout<<n->data<<"-";
-        show_linked_list(n->next);
+void show_linked_list(Node* head){  
+    if (head->next !=NULL){
+        cout<<head->data<<"-";
+        show_linked_list(head->next);
     }
     else{
-        cout<<n->data<<endl;
+        cout<<head->data<<endl;
     }
 }
 //n for new element
@@ -102,4 +102,98 @@ int get_length(Node* head){
         head=head->next;
     }
     return counter;
+}
+int get_length_recursive(Node* head){
+    if (head==NULL){
+        return 0;
+    }
+    else{
+        return 1+ get_length_recursive(head->next);
+    }
+}
+bool search(Node* head,int key){
+    if(head->data==key){
+        return true;
+    }
+    else if(head->next==NULL){
+        return false;
+    }
+    else{
+        return search(head->next,key);
+    }
+}
+void swapNodes(Node **head_ref, int x, int y){
+    
+    //if x and y are equal there's nothing to do 
+    if (x==y){
+        return;
+    }
+
+    //search x node and keep track of the previous node
+    Node *prevX=NULL,*corrX=*head_ref;
+    while(corrX && corrX->data!=x){
+        prevX=corrX;
+        corrX=corrX->next;
+    }
+
+    //search y node and keep track of the previous node
+    Node *prevY=NULL,*corrY=*head_ref;
+    while(corrY && corrY->data!=y){
+        prevY=corrY;
+        corrY=corrY->next;
+    }
+
+    //if x or y are equal to null then there's nothing to do
+    if(corrX==NULL || corrY==NULL){
+        return;
+    }
+
+    //if X isn't the head of the list
+    if (prevX!=NULL){
+        prevX->next=corrY;
+    }
+    else{// X is the head,so change the head ref to the corrent node of Y
+        *head_ref=corrY;
+    }
+
+    //if y isn't the head of the list
+    if (prevY!=NULL){
+        prevY->next=corrX;
+    }
+    else{
+        *head_ref=corrX;
+    }
+
+    //swapping the pointers of next
+    Node *temp=corrY->next;
+    corrY->next=corrX->next;
+    corrX->next=temp;
+
+}
+
+void swap(Node*& a,Node*& b){
+    Node* temp=a;
+    a=b;
+    b=temp;
+}
+void swap_nodes_optimized(Node **head_ref, int x, int y){
+    if (x==y){
+        return;
+    }
+    Node **a=NULL,**b=NULL;
+    while(*head_ref){
+        if((*head_ref)->data==x){
+            a=head_ref;
+        }
+        else if((*head_ref)->data==y){
+            b=head_ref;
+        }
+
+        head_ref=&((*head_ref)->next);
+    }
+
+    if(a && b){
+        swap(*a,*b);
+        swap((*a)->next,(*b)->next);
+    }
 }
