@@ -64,12 +64,12 @@ int main(){
             append(&head_after_merge,value);
             counter++;
         }
+        //merge two llist
         mergell(&head_secondll,&head_after_merge);
         mergell(&head_firstll,&head_after_merge);
 
 
-        show_linked_list(head_secondll);
-
+        std::cout<<merge_point(head_firstll,head_secondll)<<std::endl;
     }
     return 0;
 }

@@ -206,3 +206,24 @@ void mergell(Node** head_before_merge,Node** head_after_merge){
     }
     corrent->next=*head_after_merge;
 }
+int merge_point(Node* head_first_ll,Node* head_second_ll){
+    Node* corr1=head_first_ll;
+    Node* corr2=head_second_ll;
+    while(corr1!=corr2){
+        if(corr1==NULL){
+            corr1=head_second_ll;
+        }
+        else{
+            corr1=corr1->next;
+        }
+
+        if(corr2==NULL){
+            corr2=head_first_ll;
+        }
+        else{
+            corr2=corr2->next;
+        }
+    }
+    return corr1->data;    
+}
+

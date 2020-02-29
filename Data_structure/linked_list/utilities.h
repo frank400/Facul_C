@@ -14,4 +14,5 @@ void swap_nodes(Node **head_ref, int x, int y);
 void swap_nodes_optimized(Node **head_ref, int x, int y);
 Node* findlast(Node*& head);
 void mergell(Node** last_node,Node** head_after_merge);
+int merge_point(Node* head_first_ll,Node* head_second_ll);
 #endif
