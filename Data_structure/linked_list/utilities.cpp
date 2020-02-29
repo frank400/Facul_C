@@ -197,3 +197,14 @@ void swap_nodes_optimized(Node **head_ref, int x, int y){
         swap((*a)->next,(*b)->next);
     }
 }
+Node** findlast(Node** head,int position){
+    Node* corrent=(*head);
+    int counter=0;
+    int lenght=get_length(*head);
+
+    while(counter<position){
+        corrent=corrent->next;
+        counter++;
+    }
+    return &corrent;
+}

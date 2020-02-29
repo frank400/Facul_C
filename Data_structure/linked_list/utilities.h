@@ -12,4 +12,5 @@ int get_length_recursive(Node* head);
 bool search(Node* head,int key);
 void swap_nodes(Node **head_ref, int x, int y);
 void swap_nodes_optimized(Node **head_ref, int x, int y);
+Node** findlast(Node** head,int position);
 #endif
