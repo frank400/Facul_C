@@ -4,7 +4,7 @@
 #include "utilities.h"
 
 
-int main(){
+int delet(){
     
     //T is the number of tests cases that are going to be executed
     std::cout<<"enter the number of test do you want: ";

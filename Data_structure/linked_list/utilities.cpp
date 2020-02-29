@@ -197,14 +197,12 @@ void swap_nodes_optimized(Node **head_ref, int x, int y){
         swap((*a)->next,(*b)->next);
     }
 }
-Node** findlast(Node** head,int position){
-    Node* corrent=(*head);
-    int counter=0;
-    int lenght=get_length(*head);
+void mergell(Node** head_before_merge,Node** head_after_merge){
+    Node* corrent=*head_before_merge;
+    int lenght=get_length(*head_before_merge);
 
-    while(counter<position){
+    while(corrent->next!=NULL){
         corrent=corrent->next;
-        counter++;
     }
-    return &corrent;
+    corrent->next=*head_after_merge;
 }
